@@ -1,0 +1,30 @@
+# starts a db and backend
+version: '3'
+
+services:
+  db:
+    image: mariadb:10.10.3-jammy
+    volumes:
+      - mariadb_todo_app:/var/lib/mysql
+    restart: unless-stopped
+    ports: 
+      - 3306:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: tododot
+      MARIADB_USER: todo-admin
+      MARIADB_PASSWORD: admin-pw
+      NODE_ENV: development
+  
+  backend:
+    build: .
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: docker
+    depends_on:
+      - db
+
+volumes:
+  mariadb_todo_app:
