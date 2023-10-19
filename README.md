@@ -19,11 +19,3 @@ docker compose up
 ```
 
 visit browser at http://localhost:80
-
-## Contributing
-
-If you find any issues with the TODO App or have suggestions for improvement, please feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/lorenzdoe/todo-app).
-
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
