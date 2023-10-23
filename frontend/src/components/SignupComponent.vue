@@ -2,7 +2,6 @@
     <div class="signup-container">
         <div class="signup-form">
             <h1 class="signup-title">{{ title }}</h1>
-            <form>
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input id="username" type="text" placeholder="Enter your username" v-model="username" />
@@ -12,7 +11,6 @@
                     <input id="password" type="password" placeholder="Enter your password" v-model="password" />
                 </div>
                 <button class="signup-button" @click="signup">Sign Up</button>
-            </form>
             <div class="login-link">
                 <span>Already have an account?</span>
                 <router-link to="/login">Log in</router-link>
@@ -48,7 +46,7 @@ export default {
                 if (result.data.errors.msg != undefined) alert(result.data.errors);
                 else
                     alert(
-                        result.data.errors[0].msg + ': ' + result.data.errors[0].param
+                        "password has to be at leas 8 characters long"
                     );
             } else {
                 alert('Something went wrong');
