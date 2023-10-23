@@ -95,6 +95,7 @@ export default {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 100%;
+    background-color: #1f1f1f;
 }
 
 .signup-title {
